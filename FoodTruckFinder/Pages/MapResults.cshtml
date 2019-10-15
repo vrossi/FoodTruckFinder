@@ -1,0 +1,48 @@
+﻿@page
+@model FoodTruckFinder.Pages.MapResultsModel
+@{
+    var count = 1;
+}
+
+<div id='myMap' style='width: 50vw; height: 50vh;'></div>
+<form method="post">
+    <div class="form-actions no-color">
+        <p>
+            <button type="submit" asp-page="./Index" class="btn btn-primary btn-round mt-1">
+                Back
+            </button>
+        </p>
+    </div>
+</form>
+<script type='text/javascript'>
+    function loadMapScenario() {
+        var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+            /* No need to set credentials if already passed in URL */
+            center: new Microsoft.Maps.Location(@Model.SearchAddressLocation.Latitude, @Model.SearchAddressLocation.Longitude),
+            zoom: 15
+        });
+
+        map.entities.push(new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(@Model.SearchAddressLocation.Latitude, @Model.SearchAddressLocation.Longitude), {
+                title: 'Your Location',
+            }));
+
+        var center = map.getCenter();
+
+        @foreach(var foodTruck in Model.FoodTrucks)
+        {
+
+          <text>
+            //Create custom Pushpin
+            var pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(@foodTruck.Latitude, @foodTruck.Longitude), {
+                title: '@foodTruck.Applicant',
+                text: '@count'
+            });
+
+            map.entities.push(pin);
+            </text>
+
+            count++;
+        }
+    }
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AmJ4AgkRYthF9V-QFXQXtdcTQO3tfKcfAeuOMJm0IPv2HGVrETieIpnv33sE2H7-&callback=loadMapScenario' async defer></script>
