@@ -3,7 +3,19 @@ Food Truck Finder is an application used to find the closest food truck to your 
 
 # Using Food Truck Finder
 
+### Running locally
 First download the source and run it in Visual Studio.  You will be taken to a page which will allow you to enter an addess.  Click the find food truck button to find closest food trucks!
+
+### Demo App
+ [Demo](https://vinnie-rossi-find-food-trucks.azurewebsites.net/)
+
+
+### Welcome Screen
+
+[<img src="https://vinnierossifoodtrucktest.blob.core.windows.net/images/FoodTruckFinderWelcome.PNG" />](https://vinnie-rossi-find-food-trucks.azurewebsites.net/)
+
+### Maps Screen
+[<img src="https://vinnierossifoodtrucktest.blob.core.windows.net/images/FoodTruckFinderMaps.PNG" />](https://vinnie-rossi-find-food-trucks.azurewebsites.net/)
 
 ### Client Application
 This app was built using .NET Core 3 and Razor Pages.  There is a welcome page and a map results page.  Food Truck Finder uses data that it gets from the server and add pins to Bing Maps so that you can see the location of each food truck.
@@ -20,5 +32,5 @@ This app was built using .NET Core 3.  The bulk of the work to get the food truc
 + If similar locations are passed in it will always do the lookup to get the results.  It should be able to cache these results as well so that the lookup is not needed if the request locations are close enough to each other.
 
 ### Overall Tradeoffs
-+ This should have been deployed through DevOps, but instead it was pushed directly from Visual Studio.
++ This should have been deployed through DevOps, but instead it was pushed directly from Visual Studio. **(Friends don't let friend right-click & publish)**
 + Typically we would separate Client apps from Server apps so they are not tied to each other from a development standpoint.  That way they could be developed independently.
