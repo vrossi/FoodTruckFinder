@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <img src="~/img/food-truck-clipart-2.png" alt="Food Truck Finder" />
+        <div class="mt-5">
+            <form method="post">
+                <div class="form-actions no-color">
+                    <p>
+                        <input type="text" name="searchAddress" placeholder="Enter Address" class="form-control" value="1355 Market St, San Francisco, CA 94103" />
+                        <button type="submit" asp-page="./MapResults" class="btn btn-primary btn-round mt-1">
+                            Find Trucks!
+                        </button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
