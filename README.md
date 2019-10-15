@@ -34,3 +34,4 @@ This app was built using .NET Core 3.  The bulk of the work to get the food truc
 ### Overall Tradeoffs
 + This should have been deployed through DevOps, but instead it was pushed directly from Visual Studio. **(Friends don't let friend right-click & publish)**
 + Typically we would separate Client apps from Server apps so they are not tied to each other from a development standpoint.  That way they could be developed independently.
++ This should be a mobile app.  It works OK on a phone in the browser but with more time this could be a lot better on a mobile device.
